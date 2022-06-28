@@ -5,35 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@300&display=swap" rel="stylesheet">
-
-    <link rel="icon" href="christmas-tree.png">
+    <link rel="icon" href="christmas-tree.ico">
 
     <title>Xmas Countdown</title>
-    
 </head>
 <body>
-    
-    <div class="escritorio">
 
-            <h1>¡Time Left For XMas!</h1>
+    <h1>¡Time Left For XMas!</h1>
 
-        
+    <div id="countdown" class="countdown">
 
+    <div class="time">
+    <h2 id="days"></h2> 
+    <small>Days</small>   
+    </div> 
+
+    <div class="time">
+    <h2 id="hours"></h2> 
+    <small>Hours</small>   
+    </div> 
+
+    <div class="time">
+    <h2 id="minutes"></h2> 
+    <small>Minutes</small> 
     </div>
-    <div class="contador">
+     
+    <div class="time">
+    <h2 id="seconds"></h2> 
+    <small>Seconds</small>   
+    </div> 
 
-        <span id="countdown"></span>
-        <script src="app.js"></script>
-
-    </div>
-
-    <footer></footer>
-
+</div> 
+ <script src="app.js"></script>
 </body>
 </html>

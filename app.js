@@ -1,38 +1,30 @@
-const getRemainTime = deadline => {
-    let now = new Date(),
-        remainTime = (new Date(deadline) - now + 1000) / 1000,
-        remainSeconds = ('0' + Math.floor(remainTime % 60)).slice(-2),
-        remainMinutes = ('0' + Math.floor(remainTime / 60 % 60)).slice(-2),
-        remainHours = ('0' + Math.floor(remainTime / 3600 % 24)).slice(-2),
-        remainDays = (Math.floor(remainTime / (3600 * 24)));
+const days = document.getElementById('days');
+const hours = document.getElementById('hours');
+const minutes = document.getElementById('minutes');
+const seconds = document.getElementById('seconds');
 
-        
+const currentYear = new Date().getFullYear();
 
-        return{
-            remainTime,
-            remainSeconds,
-            remainMinutes,
-            remainHours,
-            remainDays
-        }
-};
+const xmastime = new Date(`December 25 ${currentYear + 1} 00:00:00  GMT-5`);
 
-const countdown = (deadline, countdown, finalMessage) => {
-    const el = document.getElementById(countdown);
+// Update countdown time
+function updateCountdown(){
+const currentTime = new Date();
+const diff = xmastime - currentTime;
 
-    const timerUpdate = setInterval( () =>  {
-        let d = getRemainTime(deadline);
-        
-        el.innerHTML = `${d.remainDays}:${d.remainHours}:${d.remainMinutes}:${d.remainSeconds}`;
+const d = Math.floor(diff / 1000 / 60 / 60 / 24);
+const h = Math.floor(diff / 1000 / 60 / 60) % 24;
+const m = Math.floor(diff / 1000 / 60) % 60;
+const s = Math.floor(diff / 1000) % 60;
 
-        if (d.remainTime <= 1) {
-            clearInterval(timerUpdate);
-            el.innerHTML = finalMessage;
-        }
-    },1000)
+days.innerHTML = d;
+hours.innerHTML = h < 10 ? '0' + h : h;
+minutes.innerHTML = m < 10 ? '0' + m : m;
+seconds.innerHTML = s < 10 ? '0' + s : s;
 }
 
-countdown('Dec 25 2022 00:00:00 GMT-5', 'countdown', 'Happy Xmas');
+setInterval(updateCountdown, 1000);
+
 
 // Some Snow Falling by Codepen.io
 
