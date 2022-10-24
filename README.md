@@ -1,2 +1,10 @@
-# XmasCountdown-Webpage
-Web page using html, css and js 
+# Xmas Countdown
+Web page christmas countdown
+
+## Technologies
+* HTML
+* CSS
+* JavaScript
+
+## Deploy 
+https://xmascountdown.netlify.app
