@@ -5,7 +5,7 @@ const seconds = document.getElementById('seconds');
 
 const currentYear = new Date().getFullYear();
 
-const xmastime = new Date(`December 25 ${currentYear + 1} 00:00:00  GMT-5`);
+const xmastime = new Date(`December 25 ${currentYear} 00:00:00  GMT-5`);
 
 // Update countdown time
 function updateCountdown(){
