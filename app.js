@@ -1,33 +1,48 @@
+// Countdowm 
+const { body } = document;
 const days = document.getElementById('days');
 const hours = document.getElementById('hours');
 const minutes = document.getElementById('minutes');
 const seconds = document.getElementById('seconds');
 
-const currentYear = new Date().getFullYear();
+function calculateChristmasCountdown(){
+  const now = new Date();
+  const currentMonth = now.getMonth() + 1;
+  const currentDay = now.getDate();
 
-const xmastime = new Date(`December 25 ${currentYear} 00:00:00  GMT-5`);
-
-// Update countdown time
-function updateCountdown(){
-const currentTime = new Date();
-const diff = xmastime - currentTime;
-
-const d = Math.floor(diff / 1000 / 60 / 60 / 24);
-const h = Math.floor(diff / 1000 / 60 / 60) % 24;
-const m = Math.floor(diff / 1000 / 60) % 60;
-const s = Math.floor(diff / 1000) % 60;
-
-days.innerHTML = d;
-hours.innerHTML = h < 10 ? '0' + h : h;
-minutes.innerHTML = m < 10 ? '0' + m : m;
-seconds.innerHTML = s < 10 ? '0' + s : s;
+//Averigua el año en que ocurrirá la próxima Navidad 
+let nextChristmasYear = now.getFullYear();
+if (currentMonth === 12 && currentDay > 25){
+nextChristmasYear += 1;
 }
 
-setInterval(updateCountdown, 1000);
+const nextChistmasDate = (`December 25 ${currentYear} 00:00:00  GMT-5`);
+const christmasDate = new Date(nextChistmasDate);
+const timeLeft = christmasDate - now;  
+
+let days = 0;
+let hours = 0;
+let minutes = 0;
+let seconds = 0;
+
+// Don't calculate the time left if it is Christmas day
+if (currentMonth !== 12 || (currentMonth === 12 && currentDay !== 25)) {
+    days = Math.floor(timeLeft / 1000 / 60 / 60 / 24);
+    hours = Math.floor(timeLeft / 1000 / 60 / 60) % 24;
+    mins = Math.floor(timeLeft / 1000 / 60) % 60;
+    secs = Math.floor(timeLeft / 1000) % 60;
+  }
+  days.innerHTML = days < 10 ? `0${days}` : days;
+  hours.innerHTML = hours < 10 ? `0${hours}` : hours;
+  minutes.innerHTML = minutes < 10 ? `0${minutes}` : minutess;
+  secondss.innerHTML = seconds < 10 ? `0${secondss}` : seconds;
+}
+
+setInterval(calculateChristmasCountdown, 1000);
+
 
 
 // Some Snow Falling by Codepen.io
-
 'use strict';
 
 const LIFE_PER_TICK = 1000 / 60;
