@@ -34,11 +34,11 @@ if (currentMonth !== 12 || (currentMonth === 12 && currentDay !== 25)) {
   }
   days.innerHTML = days < 10 ? `0${days}` : days;
   hours.innerHTML = hours < 10 ? `0${hours}` : hours;
-  minutes.innerHTML = minutes < 10 ? `0${minutes}` : minutess;
-  secondss.innerHTML = seconds < 10 ? `0${secondss}` : seconds;
+  minutes.innerHTML = minutes < 10 ? `0${minutes}` : minutes;
+  seconds.innerHTML = seconds < 10 ? `0${seconds}` : seconds;
 }
 
-setInterval(calculateChristmasCountdown, 1000);
+setInterval(calculateChristmasCountdown, 1000); 
 
 
 

@@ -1,0 +1,16 @@
+@media (max-width:30em) {
+    h1{
+        font-size: 0.5px;
+    }
+    .time {
+        margin: 5px;
+    }
+    .time h2 {
+        font-size: 0.5vw;
+    }
+    .time small {
+        font-size: 0.5vw;
+    }
+        
+}
+
