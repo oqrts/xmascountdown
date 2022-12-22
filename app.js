@@ -4,7 +4,6 @@ const days = document.getElementById('days');
 const hours = document.getElementById('hours');
 const minutes = document.getElementById('minutes');
 const seconds = document.getElementById('seconds');
-
 const currentYear = new Date().getFullYear();
 
 const xmastime = new Date(`December 25 ${currentYear} 00:00:00  GMT-5`);
