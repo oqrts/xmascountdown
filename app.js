@@ -1,46 +1,32 @@
-// Countdowm 
-const { body } = document;
-const days = document.getElementById('days');
-const hours = document.getElementById('hours');
-const minutes = document.getElementById('minutes');
-const seconds = document.getElementById('seconds');
+const daysNode = document.getElementById('days');
+const hoursNode = document.getElementById('hours');
+const minutesNode = document.getElementById('minutes');
+const secondsNode = document.getElementById('seconds');
+// console.log(daysNode)
 
-function calculateChristmasCountdown(){
-  const now = new Date();
-  const currentMonth = now.getMonth() + 1;
-  const currentDay = now.getDate();
+const currentYear = new Date().getFullYear();
+const newyear = new Date(`December 25 ${currentYear}`);
 
-//Averigua el año en que ocurrirá la próxima Navidad 
-let nextChristmasYear = now.getFullYear();
-if (currentMonth === 12 && currentDay > 25){
-nextChristmasYear += 1;
-}
+const timeCountDown = () => {
+    const currentDate = new Date();
+    const newYearDate = new Date(newyear);
+    const totalSeconds = (newYearDate - currentDate) / 1000;
 
-const nextChistmasDate = (`December 25 ${currentYear} 00:00:00  GMT-5`);
-const christmasDate = new Date(nextChistmasDate);
-const timeLeft = christmasDate - now;  
+    const days = Math.floor(totalSeconds / 3600 / 24 );
+    const hours = Math.floor(totalSeconds / 3600)  % 24;
+    const minutes = Math.floor(totalSeconds / 60) %60;
+    const seconds = Math.floor(totalSeconds) % 60;
 
-let days = 0;
-let hours = 0;
-let minutes = 0;
-let seconds = 0;
+    daysNode.innerHTML = formatTime(days);
+    hoursNode.innerHTML = formatTime(hours);
+    minutesNode.innerHTML = formatTime(minutes);
+    secondsNode.innerHTML = formatTime(seconds);
+};
 
-// Don't calculate the time left if it is Christmas day
-if (currentMonth !== 12 || (currentMonth === 12 && currentDay !== 25)) {
-    days = Math.floor(timeLeft / 1000 / 60 / 60 / 24);
-    hours = Math.floor(timeLeft / 1000 / 60 / 60) % 24;
-    mins = Math.floor(timeLeft / 1000 / 60) % 60;
-    secs = Math.floor(timeLeft / 1000) % 60;
-  }
-  days.innerHTML = days < 10 ? `0${days}` : days;
-  hours.innerHTML = hours < 10 ? `0${hours}` : hours;
-  minutes.innerHTML = minutes < 10 ? `0${minutes}` : minutess;
-  secondss.innerHTML = seconds < 10 ? `0${secondss}` : seconds;
-}
+const formatTime = (time) => time > 10 ? time : `0${time}`;
 
-setInterval(calculateChristmasCountdown, 1000);
-
-
+timeCountDown();
+setInterval(timeCountDown, 1000);
 
 // Some Snow Falling by Codepen.io
 'use strict';
