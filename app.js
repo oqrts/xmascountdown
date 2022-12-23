@@ -29,6 +29,7 @@ timeCountDown();
 setInterval(timeCountDown, 1000);
 
 // Some Snow Falling by Codepen.io
+
 'use strict';
 
 const LIFE_PER_TICK = 1000 / 60;

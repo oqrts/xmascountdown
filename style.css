@@ -1,3 +1,8 @@
+html, body{
+    height: 100%;
+    min-height: 100%;
+}
+
 body {
     margin-top: -2.5vw;
     min-height: 46vw;
@@ -13,9 +18,7 @@ body {
 }
 
 h1 {
-    
     font-size: 8vw;
-    
 }
 
 .countdown {
@@ -43,20 +46,19 @@ h1 {
     margin: 0 0  5px;
 }
 
-@media (max-width:30em) {
-h1{
-    font-size: 0.5px;
-}
-.time {
-    margin: 5px;
-}
-.time h2 {
-    font-size: 0.5vw;
-}
-.time small {
-    font-size: 0.5vw;
-}
-    
-}
+/* .container {
+    width: 100%;
+    display: inherit;
+    max-width: 1215px;
+    justify-content: inherit;
+    margin: 0 auto;
+    padding: 0px 0px;
+  }
 
-
+  .footer {
+    color: var(--white);
+    background-image: linear-gradient(45deg, #118585, #14296bf6);
+    padding: 30px;
+    text-align: center;
+    font-size: 14px;
+  } */
