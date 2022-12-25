@@ -26,10 +26,10 @@ let interval = setInterval(function(){
     $seconds.innerHTML = ('0' + seconds).slice(-2);
 
     //Cuando llegue a 0
-    if(distance < 0){
+    /* if(distance < 0){
         clearInterval(interval);
         $finalMessage.style.transform = 'translateY(0)';
-    }
+    } */
 }, 1000); 
 
 /* const daysNode = document.getElementById('days');
