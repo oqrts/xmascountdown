@@ -46,19 +46,21 @@ h1 {
     margin: 0 0  5px;
 }
 
-/* .container {
-    width: 100%;
-    display: inherit;
-    max-width: 1215px;
-    justify-content: inherit;
-    margin: 0 auto;
-    padding: 0px 0px;
-  }
+.final-sms{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: grid;
+    place-items: center;
+    transform: translateY(-100%);
+    transition: ease-in-out 0.5s;
+    background-color: #333;
+}
 
-  .footer {
-    color: var(--white);
-    background-image: linear-gradient(45deg, #118585, #14296bf6);
-    padding: 30px;
+.final-sms h2{
     text-align: center;
-    font-size: 14px;
-  } */
+    font-size: 100px;
+    color: #fff;
+}
