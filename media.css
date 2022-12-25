@@ -14,8 +14,8 @@
     .time small {
         font-size: 0.5vw;
     }
-    footer{
-        font-size: 1vw;
+    .final-sms h2{
+        font-size: 5vw;
     }
 }
 
@@ -35,7 +35,7 @@
     .time small {
         font-size: 0.5vw;
     }
-    footer{
-        font-size: 0.5vw;
+    .final-sms h2{
+        font-size: 4.5vw;
     }
 }

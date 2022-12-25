@@ -1,10 +1,38 @@
-const daysNode = document.getElementById('days');
-const hoursNode = document.getElementById('hours');
-const minutesNode = document.getElementById('minutes');
-const secondsNode = document.getElementById('seconds');
-// console.log(daysNode)
+const $days = document.getElementById('days'),
+$hours = document.getElementById('hours'),
+$minutes = document.getElementById('minutes'),
+$seconds = document.getElementById('seconds'),
+$finalMessage = document.querySelector('.final-sms');
 
-const currentYear = new Date().getFullYear();
+const countdownDate = new Date('12 24, 2022 20:46:00').getTime();
+
+let interval = setInterval(function(){
+//Obtener fecha actual y milisegundos
+    const now = new Date().getTime();
+
+    //Obtener las distancias entre ambas fechas
+    let distance = countdownDate - now;
+
+    //Calculos a dias-horas-minutos-segundos
+    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((distance % (1000 * 60 * 60 * 24 )) / (1000 * 60 * 60));
+    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((distance % (1000 * 60 )) / (1000));
+
+    //Escribimos resultados
+    $days.innerHTML = days;
+    $hours.innerHTML = hours;
+    $minutes.innerHTML = minutes;
+    $seconds.innerHTML = ('0' + seconds).slice(-2);
+
+    //Cuando llegue a 0
+    if(distance < 0){
+        clearInterval(interval);
+        $finalMessage.style.transform = 'translateY(0)';
+    }
+}, 1000);
+
+/* const currentYear = new Date().getFullYear();
 const newyear = new Date(`December 25 ${currentYear}`);
 
 const timeCountDown = () => {
@@ -26,7 +54,7 @@ const timeCountDown = () => {
 const formatTime = (time) => time > 10 ? time : `0${time}`;
 
 timeCountDown();
-setInterval(timeCountDown, 1000);
+setInterval(timeCountDown, 1000); */
 
 // Some Snow Falling by Codepen.io
 
