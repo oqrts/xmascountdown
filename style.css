@@ -19,6 +19,7 @@ body {
 
 h1 {
     font-size: 8vw;
+    text-shadow: 4px 4px 6px rgb(0, 0, 0);
 }
 
 .countdown {
@@ -36,7 +37,7 @@ h1 {
     align-items: center;
     justify-content: center;
     margin: 8px;
-
+    text-shadow: 1px 1px 3px rgb(0, 0, 0);
 }
 
 .time h2 {
