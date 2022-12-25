@@ -4,7 +4,7 @@ $minutes = document.getElementById('minutes'),
 $seconds = document.getElementById('seconds'),
 $finalMessage = document.querySelector('.final-sms');
 
-const countdownDate = new Date('12 25, 2023 00:00:00').getTime();
+const countdownDate = new Date('12 25, 2022 00:00:00').getTime();
 
 let interval = setInterval(function(){
 //Obtener fecha actual y milisegundos
