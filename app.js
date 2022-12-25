@@ -1,4 +1,4 @@
-/* const $days = document.getElementById('days'),
+const $days = document.getElementById('days'),
 $hours = document.getElementById('hours'),
 $minutes = document.getElementById('minutes'),
 $seconds = document.getElementById('seconds'),
@@ -30,9 +30,9 @@ let interval = setInterval(function(){
         clearInterval(interval);
         $finalMessage.style.transform = 'translateY(0)';
     }
-}, 1000); */
+}, 1000); 
 
-const daysNode = document.getElementById('days');
+/* const daysNode = document.getElementById('days');
 const hoursNode = document.getElementById('hours');
 const minutesNode = document.getElementById('minutes');
 const secondsNode = document.getElementById('seconds');
@@ -59,7 +59,7 @@ const timeCountDown = () => {
 const formatTime = (time) => time > 10 ? time : `0${time}`;
 
 timeCountDown();
-setInterval(timeCountDown, 1000);
+setInterval(timeCountDown, 1000); */
 
 // Some Snow Falling by Codepen.io
 
