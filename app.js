@@ -23,13 +23,13 @@ let interval = setInterval(function(){
     $days.innerHTML = days;
     $hours.innerHTML = hours;
     $minutes.innerHTML = minutes;
-    $seconds.innerHTML = ('0' + seconds).slice(-2);
+    $seconds.innerHTML = seconds;
 
     //Cuando llegue a 0
-    /* if(distance < 0){
+    if(distance < 0){
         clearInterval(interval);
         $finalMessage.style.transform = 'translateY(0)';
-    } */
+    }
 }, 1000); 
 
 /* const daysNode = document.getElementById('days');
