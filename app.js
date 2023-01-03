@@ -5,7 +5,7 @@ $secondsNode = document.getElementById('seconds'),
 $finalMessage = document.querySelector('.final-sms');
 
 const currentYear = new Date().getFullYear();
-const newyear = new Date(`12 25 ${currentYear + 1}`);
+const newyear = new Date(`12 25 ${currentYear}`);
 
 const timeCountDown = () => {
     const currentDate = new Date();
